@@ -1,5 +1,6 @@
 
 import { useRef, type FormEvent } from "react";
+import { toast } from "react-toastify";
 import "./styles.css";
 
 
@@ -24,7 +25,7 @@ export function UncontrolledForm() {
         );
 
         if (!name || !email) {
-            alert("Preencha todos os campos!");
+            toast.error("Preencha todos os campos!");
             data_is_valid = false;
             return;
         }
@@ -32,7 +33,7 @@ export function UncontrolledForm() {
         data_is_valid = true;
 
         if (data_is_valid) {
-            alert("Dados enviados com sucesso!");
+            toast.success("Dados enviados com sucesso!");
 
             console.log("--- Dados do Formulário Não Controlado ---");
             console.log("Nome:", name.length);
