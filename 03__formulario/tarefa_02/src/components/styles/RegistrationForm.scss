@@ -1,0 +1,83 @@
+
+@import "../../styles/variables.scss";
+
+.c_container {
+    background-color: $white;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px $shadow-light;
+    width: 100%;
+    max-width: 800px;
+    margin: 4rem auto;
+    box-sizing: border-box;
+
+    h1 {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: $gray-dark;
+    }
+
+    .c_container__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        
+        .c_form__container_name,
+        .c_form__container_email {
+            label {
+                font-weight: 600;
+                display: inline-block;
+                padding-bottom: 0.4rem;
+                color: $gray-muted;
+            }
+
+            input {
+                padding: 12px;
+                border: 2px solid $border-default;
+                border-radius: 6px;
+                font-size: 1rem;
+                transition: border-color 0.3s;
+                width: 100%;
+                margin-bottom: 6px;
+                box-sizing: border-box;
+            
+                &.c_error {
+                    border-color: $error;
+                }
+            }
+            
+            .c_error_message {
+                height: 1rem;
+                font-size: 0.85rem;
+                color: $error;
+                margin-bottom: 1rem;
+                visibility: hidden;
+            }
+            
+            .c_error_message.c_visible {
+                visibility: visible;
+            }
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: $primary;
+            border: none;
+            border-radius: 6px;
+            color: $white;
+            font-weight: bold;
+            font-size: 1rem;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            margin-top: 0.5rem;
+            
+            &:hover {
+                background-color: $primary-hover;
+            }
+        }
+    }
+}
